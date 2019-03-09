@@ -127,8 +127,8 @@
 
 }
 
-
 .gorizontal-menu-header {
+    display: flex;
     font-family: Montserrat;
     color: #ffffff;
     font-size: 14px;
@@ -136,10 +136,16 @@
     font-weight: 300;
     text-align: left;
     text-transform: capitalize;
-
-
-
 }
+
+#menu {
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked~.gorizontal-menu-header {
+    visibility: visible;
+}
+
 
 .li-menu-header {
     list-style-type: none;
@@ -163,6 +169,19 @@
 
 }
 
+label {
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    display: none;
+    border: none;
+    background-image: url(../img/menu-icon.png);
+    background-size: 100%;
+}
+
+label:hover {
+    cursor: pointer;
+}
 
 .header-header {
     display: flex;
@@ -1278,12 +1297,62 @@ footer article.tweet a.link:hover {
     margin: 5px;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
     .container {
+        width: 100%;
 
+    }
+
+
+    label {
+        display: block;
+        margin: 0px;
+    }
+
+    .main-header {
 
         width: 100%;
+        height: 400px;
+
     }
+
+    .header-right {
+        display: none;
+    }
+
+    .gorizontal-menu-header {
+        display: flex;
+        visibility: hidden;
+        margin: 0 auto;
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        left: 0px;
+        top: 100px;
+    }
+
+
+    .li-menu-header {
+        width: 100%;
+        height: 35px;
+        text-align: center;
+        margin-top: 2px;
+    }
+
+
+    .a-menu-header {
+        /* border: 1px solid green; */
+        width: 100%;
+    }
+
+
+    .portfolio {
+        display: none;
+    }
+
+
 
     .services {
 
@@ -1306,9 +1375,9 @@ footer article.tweet a.link:hover {
         width: 100%;
         height: 900px;
 
-
-
     }
+
+
 
     .all-posts {
         flex-direction: column;
@@ -1327,7 +1396,7 @@ footer article.tweet a.link:hover {
     }
 
     .h2-text {
-        width: 480px;
+        width: 460px;
     }
 
     .mobile-photo {
@@ -1336,7 +1405,7 @@ footer article.tweet a.link:hover {
     }
 
     .mobile-devices {
-        width: 480px;
+        width: 460px;
         margin-left: -200px;
     }
 
@@ -1344,4 +1413,28 @@ footer article.tweet a.link:hover {
         color: black;
     }
 
+    .pluses {
+        width: 460px;
+
+    }
+
+    .pluses-text {
+        font-size: 14px;
+    }
+
+    .footer-column {
+        flex-direction: row;
+    }
+
+    footer section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .copyright {
+        display: flex;
+        flex-direction: column;
+
+    }
 }
